@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/bundle.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Exchange Rate Calculator</h1>
+        </header>
+      
+        <div id="amountToConvert">
+            <label for="number">Amount in EUR:</label>
+            <input type="number" v-model.number="amountToConvert"/>
+        </div>
+        <div>
+            <label for="currency_select">Convert to:</label>
+            <select id="currency_select" v-model="selectedRate">
+            <option disabled value="">Select a currency</option>
+            <option v-for="(rate, char) in exchangeRates" :value="rate"> {{ char }} </option>
+            </select>
+
+        </div>
+          <div id="converted amount" v-if="selectedRate">
+            <h3>{{convertedAmount}}</h3>
+            <!-- <h3>Population: {{selectedCountry.population}}</h2> -->
+            <!-- <img class="small-flag" :src="selectedCountry.flag" />
+            <button v-if="!favouriteCountries.includes(selectedCountry)" v-on:click="addToFavourites">Add Country</button>
+      
+            <div v-if="neighbouringCountries.length" id="neighbouring_countries"/>
+            <h3>Neighbouring Countries</h3>
+            <p>Total population for neighbouring countries: {{ neighbouringCountriesPopulation }}
+              <ul id="neighbouring_countries">
+                <li v-for="neighbouringCountry in neighbouringCountries">
+                  <p>{{neighbouringCountry.name}}</p>
+                </li>
+              </ul> -->
+            </div>
+
+    </div>
+</body>
+</html>
